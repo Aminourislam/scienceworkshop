@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 phone_number = '$phone_number',
                 email = '$email',
                 gender = '$gender',
-				college = '$college',
+		college = '$college',
                 class = '$class',
                 roll = '$roll'
               WHERE user_id = '$user_id'";
