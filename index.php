@@ -179,9 +179,11 @@ $user_data = check_login($con);
     <!-- Centered Paragraph and Button -->
     <div class="button-container">
         <p>FOR MORE INFORMATION ?</p>
-        <a href="https://hscall.github.io/ZIA-SIR/" class="btn">Let's Go</a>
+        <a href="https://hscall.github.io/ZIA-SIR/" class="btn">Let's Go</a><br><br>
+<a href="profile.php" class="btn">Edit Profile</a>
+
+
     </div><br>
-	<a href="profile.php" class="btn">Edit Profile</a>
 
 </body>
 </html>
