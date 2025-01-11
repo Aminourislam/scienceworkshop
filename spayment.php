@@ -7,7 +7,7 @@ include("functions.php");
 $user_data = check_login($con);
 
 // Fetch payment statuses from the database
-$query = "SELECT status1, status2, status3, status4, status5, status6 FROM your_table_name LIMIT 1"; // Replace 'your_table_name' with your actual table name
+$query = "SELECT status1, status2, status3, status4, status5, status6 FROM users LIMIT 1"; // Replaced table name with 'users'
 $result = mysqli_query($con, $query);
 
 if ($result) {
@@ -97,6 +97,27 @@ mysqli_close($con);
             margin: 0;
         }
 
+        .back-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .back-button button {
+            background-color: #00ff00; /* Green button background */
+            color: #000; /* Black text */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button button:hover {
+            background-color: #00cc00; /* Slightly darker green on hover */
+        }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
@@ -146,5 +167,13 @@ mysqli_close($con);
             <h3><?php echo htmlspecialchars($status6); ?></h3>
         </div>
     </div>
+    <div class="back-button">
+        <button onclick="goBack()">Go Back</button>
+    </div>
+    <script>
+        function goBack() {
+            window.location.href = "index.php"; // Change to your desired back page
+        }
+    </script>
 </body>
 </html>
