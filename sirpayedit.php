@@ -113,11 +113,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
         <form method="POST">
             <div class="form-group">
                 <label for="roll">Roll:</label>
-                <input type="text" id="roll" name="roll" required>
+                <input type="number" id="roll" name="roll" required>
             </div>
             <div class="form-group">
                 <label for="class">Class:</label>
-                <input type="text" id="class" name="class" required>
+                <select id="class" name="class" required>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
             </div>
             <div class="form-group">
                 <button type="submit" name="search">Search</button>
