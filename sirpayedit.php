@@ -15,7 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search'])) {
 
     // Query to find users by roll and class
     $search_query = "SELECT * FROM users WHERE roll='$roll' AND class='$class'";
-    $search_results = mysqli_query($con, $user_id = $_POST['user_id'];
+    $search_results = mysqli_query($con, $search_query);
+}
+
+// Handle form submission for updating payment statuses
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
+    $user_id = $_POST['user_id'];
     $status1 = $_POST['status1'];
     $status2 = $_POST['status2'];
     $status3 = $_POST['status3'];
@@ -63,8 +68,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search'])) {
         }
         .form-group input, .form-group select {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             box-sizing: border-box;
+            margin-bottom: 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            background-color: #f0f8ff;
+            color: #333;
+            height: 40px;
         }
         .form-group button {
             width: 100%;
@@ -74,8 +85,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search'])) {
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
         }
         .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-button a {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button a:hover {
             background-color: #0056b3;
         }
     </style>
@@ -101,6 +128,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search'])) {
             <h1>Edit Payment Status</h1>
             <?php while ($user = mysqli_fetch_assoc($search_results)): ?>
                 <form method="POST">
+                    <div class="form-group">
+                        <label>User Name: <?php echo htmlspecialchars($user['user_name']); ?></label>
+                    </div>
+                    <div class="form-group">
+                        <label>Roll: <?php echo htmlspecialchars($user['roll']); ?></label>
+                    </div>
+                    <div class="form-group">
+                        <label>College: <?php echo htmlspecialchars($user['college']); ?></label>
+                    </div>
                     <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user['user_id']); ?>">
                     <div class="form-group">
                         <label for="status1">1st Payment:</label>
@@ -152,6 +188,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search'])) {
         <?php elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search'])): ?>
             <p>No results found for the given roll and class.</p>
         <?php endif; ?>
+        <div class="back-button">
+            <a href="admin.php">Go Back</a>
+        </div>
     </div>
 </body>
 </html>
