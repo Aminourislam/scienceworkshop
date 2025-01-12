@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 phone_number = '$phone_number',
                 email = '$email',
                 gender = '$gender',
-		college = '$college',
+                college = '$college',
                 class = '$class',
                 roll = '$roll'
               WHERE user_id = '$user_id'";
@@ -156,15 +156,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <option value="Male" <?php if ($user_data['gender'] == "Male") echo "selected"; ?>>Male</option>
                 <option value="Female" <?php if ($user_data['gender'] == "Female") echo "selected"; ?>>Female</option>
             </select>
+
             <label for="college">College Name:</label>
             <input type="text" id="college" name="college" value="<?php echo htmlspecialchars($user_data['college']); ?>" readonly required>
 
             <label for="class">Class:</label>
-            <input type="number" id="class" name="class" value="<?php echo htmlspecialchars($user_data['class']); ?>" readonly required>
-                
+            <select id="class" name="class" disabled>
+                <option value="11" <?php if ($user_data['class'] == 11) echo "selected"; ?>>11</option>
+                <option value="12" <?php if ($user_data['class'] == 12) echo "selected"; ?>>12</option>
+            </select>
+            
             <label for="roll">Roll:</label>
             <input type="number" id="roll" name="roll" value="<?php echo htmlspecialchars($user_data['roll']); ?>" readonly required>
-              
+            
             <!-- Update Profile Button -->
             <button type="button" onclick="enableEdit()">Update Profile</button>
 
@@ -184,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             document.getElementById("email").removeAttribute("readonly");
             document.getElementById("gender").removeAttribute("disabled");
             document.getElementById("college").removeAttribute("readonly");
-            document.getElementById("class").removeAttribute("readonly");
+            document.getElementById("class").removeAttribute("disabled");
             document.getElementById("roll").removeAttribute("readonly");
 
             // Show the save button

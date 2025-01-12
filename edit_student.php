@@ -190,7 +190,10 @@ button:hover {
             <input type="text" id="college" name="college" value="<?php echo htmlspecialchars($user_data['college']); ?>" required>
             
             <label for="class">Class:</label>
-            <input type="number" id="class" name="class" value="<?php echo htmlspecialchars($user_data['class']); ?>" required>
+            <select id="class" name="class" required>
+                <option value="11" <?php if ($user_data['class'] == 11) echo "selected"; ?>>11</option>
+                <option value="12" <?php if ($user_data['class'] == 12) echo "selected"; ?>>12</option>
+            </select>
             
             <label for="roll">Roll:</label>
             <input type="number" id="roll" name="roll" value="<?php echo htmlspecialchars($user_data['roll']); ?>" required>

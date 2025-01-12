@@ -237,7 +237,7 @@ $class_12_students_result = mysqli_query($con, $class_12_students_query);
 <!-- Navigation Bar -->
     <div class="nav" id="nav-menu">
         <a href="sirpayedit.php">Payment</a>
-        <a href="sirexamresultedit.php">Result</a>
+        <a href="pan.php?page=result">Result</a>
         <a href="pan.php?page=attendance">Attendance</a>
         <a href="pan.php?page=grades">Grades</a>
         <a href="pan.php?page=feedback">Feedback</a>

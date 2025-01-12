@@ -169,7 +169,7 @@ mysqli_close($con);
     </div>
     <div class="back-button">
         <button onclick="goBack()">Go Back</button>
-    </div>
+    </div><br><br>
     <script>
         function goBack() {
             window.location.href = "index.php"; // Change to your desired back page
