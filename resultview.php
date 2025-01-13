@@ -150,7 +150,7 @@ th {
                 $result = $query->get_result();
 
                 while($row = $result->fetch_assoc()) {
-                    echo "<tr><td>{$row['user_name']}</td><td>{$row['roll']}</td><td>{$row['total_number']}</td></tr>";
+                    echo "<tr><td>{$row['user_name']}</td><td>{$row['roll']}</td><td>{$row['total_number']}</td></tr>"; 
                 }
                 ?>
             </tbody>
