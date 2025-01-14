@@ -182,7 +182,7 @@ $user_data = check_login($con);
         <a href="https://hscall.github.io/ZIA-SIR/assignment.html">Assignments</a>
         <a href="spayment.php">Payments</a>
         <a href="profile.php">Edit Profile</a>
-        <a href="resultview.php">Results</a>
+        <a href="result.php">Results</a>
         <a href="pan.php?page=feedback">Feedback</a>
     </div>
     <!-- Main Content Section -->
