@@ -237,7 +237,7 @@ $class_12_students_result = mysqli_query($con, $class_12_students_query);
 <!-- Navigation Bar -->
     <div class="nav" id="nav-menu">
         <a href="sirpayedit.php">Payment</a>
-        <a href="pan.php?page=result">Result</a>
+        <a href="sirresultedit.php">Result</a>
         <a href="pan.php?page=attendance">Attendance</a>
         <a href="pan.php?page=grades">Grades</a>
         <a href="pan.php?page=feedback">Feedback</a>
@@ -267,7 +267,6 @@ $class_12_students_result = mysqli_query($con, $class_12_students_query);
     <h2>Students in Class 11</h2>
     <table>
         <tr>
-            <th>User ID</th>
             <th>User Name</th>
             <th>Email</th>
             <th>Phone Number</th>
@@ -278,7 +277,6 @@ $class_12_students_result = mysqli_query($con, $class_12_students_query);
         </tr>
         <?php while ($student = mysqli_fetch_assoc($class_11_students_result)): ?>
         <tr>
-            <td><?php echo htmlspecialchars($student['user_id']); ?></td>
             <td><?php echo htmlspecialchars($student['user_name']); ?></td>
             <td><?php echo htmlspecialchars($student['email']); ?></td>
             <td><?php echo htmlspecialchars($student['phone_number']); ?></td>
@@ -295,7 +293,6 @@ $class_12_students_result = mysqli_query($con, $class_12_students_query);
     <h2>Students in Class 12</h2>
     <table>
         <tr>
-            <th>User ID</th>
             <th>User Name</th>
             <th>Email</th>
             <th>Phone Number</th>
@@ -306,7 +303,6 @@ $class_12_students_result = mysqli_query($con, $class_12_students_query);
         </tr>
         <?php while ($student = mysqli_fetch_assoc($class_12_students_result)): ?>
         <tr>
-            <td><?php echo htmlspecialchars($student['user_id']); ?></td>
             <td><?php echo htmlspecialchars($student['user_name']); ?></td>
             <td><?php echo htmlspecialchars($student['email']); ?></td>
             <td><?php echo htmlspecialchars($student['phone_number']); ?></td>
